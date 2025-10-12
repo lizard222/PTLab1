@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+      - feature/task1
+      - feature/task2
 jobs:
   build:
     
