@@ -1,8 +1,9 @@
-# test/test_SecondQuartileRating.py# test/test_SecondQuartileRating.py
+# test/test_SecondQuartileRating.py
 import pytest
 from src.YAMLDataReader import YAMLDataReader
 from src.SecondQuartileRating import SecondQuartileRating
 from src.CalcRating import CalcRating
+
 
 @pytest.fixture()
 def sample_data(tmp_path):
@@ -27,6 +28,7 @@ def sample_data(tmp_path):
     file = tmp_path / "students.yaml"
     file.write_text(content, encoding='utf-8')
     return str(file)
+
 
 def test_second_quartile(sample_data):
     reader = YAMLDataReader()
