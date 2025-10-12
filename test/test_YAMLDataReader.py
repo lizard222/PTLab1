@@ -1,7 +1,6 @@
 # test/test_SecondQuartileRating.py
 import pytest
-from YAMLDataReader import YAMLDataReader
-from SecondQuartileRating import SecondQuartileRating
+from src.YAMLDataReader import YAMLDataReader
 
 
 @pytest.fixture()

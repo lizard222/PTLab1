@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from Types import DataType
-from CalcRating import CalcRating
+from src.Types import DataType
+from src.CalcRating import CalcRating
 import pytest
 
 

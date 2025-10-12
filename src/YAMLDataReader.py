@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from DataReader import DataReader
-from Types import DataType
+from src.DataReader import DataReader
+from src.Types import DataType
 import yaml
 
 

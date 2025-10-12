@@ -2,9 +2,9 @@
 import argparse
 import sys
 
-from CalcRating import CalcRating
-from TextDataReader import TextDataReader
-from YAMLDataReader import YAMLDataReader
+from src.CalcRating import CalcRating
+from src.TextDataReader import TextDataReader
+from src.YAMLDataReader import YAMLDataReader
 
 
 def get_path_from_arguments(args) -> str:
