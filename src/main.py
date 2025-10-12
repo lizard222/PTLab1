@@ -20,12 +20,12 @@ def get_path_from_arguments(args) -> str:
 
 
 def main():
-    # path = get_path_from_arguments(sys.argv[1:])
-    # reader = TextDataReader()
-    # students = reader.read(path)
-    # print("Students: ", students)
-    # rating = CalcRating(students).calc()
-    # print("Rating: ", rating)
+    path = get_path_from_arguments(sys.argv[1:])
+    reader = TextDataReader()
+    students = reader.read(path)
+    print("Students: ", students)
+    rating = CalcRating(students).calc()
+    print("Rating: ", rating)
 
     reader = YAMLDataReader()
     students = reader.read("data/students.yaml")
