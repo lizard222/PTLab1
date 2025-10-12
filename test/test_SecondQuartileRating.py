@@ -1,7 +1,8 @@
-# test/test_YAMLDataReader.py
+# test/test_SecondQuartileRating.py# test/test_SecondQuartileRating.py
 import pytest
 from src.YAMLDataReader import YAMLDataReader
-
+from src.SecondQuartileRating import SecondQuartileRating
+from src.CalcRating import CalcRating
 
 @pytest.fixture()
 def sample_data(tmp_path):
@@ -27,9 +28,11 @@ def sample_data(tmp_path):
     file.write_text(content, encoding='utf-8')
     return str(file)
 
-
-def test_yaml_reader(sample_data):
+def test_second_quartile(sample_data):
     reader = YAMLDataReader()
     students = reader.read(sample_data)
-    assert "Иванов Иван Иванович" in students
-    assert isinstance(students["Петров Петр Петрович"], list)
+    rating = CalcRating(students).calc()
+    sq_rating = SecondQuartileRating()
+    sq_students = sq_rating.get_second_quartile_students(rating)
+    # Проверяем, что возвращается список кортежей
+    assert all(isinstance(x, tuple) for x in sq_students)
