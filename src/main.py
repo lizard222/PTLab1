@@ -6,6 +6,7 @@ from CalcRating import CalcRating
 from TextDataReader import TextDataReader
 from YAMLDataReader import YAMLDataReader
 
+
 def get_path_from_arguments(args) -> str:
     parser = argparse.ArgumentParser(
         description="Path to datafile"
@@ -26,8 +27,9 @@ def main():
     print("Rating: ", rating)
 
     reader = YAMLDataReader()
-    students = reader.read("data/students.yaml") 
+    students = reader.read("data/students.yaml")
     print(students)
+
 
 if __name__ == "__main__":
     main()
