@@ -26,6 +26,6 @@ class YAMLDataReader(DataReader):
         students: DataType = {}
         for student_entry in raw_data:
             for name, subjects in student_entry.items():
-                students[name] = [(subj, score) for subj, score in subjects.items()]
+                students[name] = [(sbj, scr) for sbj, scr in subjects.items()]
 
         return students
