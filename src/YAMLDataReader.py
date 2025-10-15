@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
+import yaml
+
 from src.DataReader import DataReader
 from src.Types import DataType
-import yaml
 
 
 class YAMLDataReader(DataReader):
@@ -19,14 +20,12 @@ class YAMLDataReader(DataReader):
     """
 
     def read(self, path: str) -> DataType:
-        with open(path, encoding='utf-8') as file:
+        with open(path, encoding="utf-8") as file:
             raw_data = yaml.safe_load(file)
 
         students: DataType = {}
         for student_entry in raw_data:
             for name, subjects in student_entry.items():
-                students[name] = [
-                    (subj, score) for subj, score in subjects.items()
-                ]
+                students[name] = [(subj, score) for subj, score in subjects.items()]
 
         return students
