@@ -1,4 +1,4 @@
-#!/home/rustamus/projects/Lab1/TP_Lab1/rating/venv/bin/python3.10
+#!/home/rustam/projects/PTLab1/venv/bin/python3.10
 import sys
 from pytest import console_main
 if __name__ == '__main__':

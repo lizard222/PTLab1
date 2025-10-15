@@ -1,17 +1,18 @@
 # -*- coding: utf-8 -*-
 import argparse
+import os
 import sys
 
-from src.CalcRating import CalcRating
-from src.TextDataReader import TextDataReader
-from src.YAMLDataReader import YAMLDataReader
-from src.SecondQuartileRating import SecondQuartileRating
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from src.CalcRating import CalcRating  # noqa: E402
+from src.SecondQuartileRating import SecondQuartileRating  # noqa: E402
+from src.TextDataReader import TextDataReader  # noqa: E402
+from src.YAMLDataReader import YAMLDataReader  # noqa: E402
 
 
 def get_path_from_arguments(args) -> str:
-    parser = argparse.ArgumentParser(
-        description="Path to datafile"
-    )
+    parser = argparse.ArgumentParser(description="Path to datafile")
     parser.add_argument(
         "-p", dest="path", type=str, required=True, help="Path to datafile"
     )
